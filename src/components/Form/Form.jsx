@@ -74,23 +74,29 @@ const Form = () => {
     },
   ];
   return (
-    <>
+    <div className={styles.form_section}>
       {formFields.map((field, index) => (
-        <div key={index}>
-          <label htmlFor={field.name}>{field.label}</label>
-          <input
+        <div className={styles.form_group} key={index}>
+            <input
             type={field.type}
             name={field.name}
             value={formData[field.name] || ""}
             onChange={handleChange}
             onBlur={handleBlur}
           />
+          <label
+            className={formData[field.name] ? styles.filled : ""}
+            htmlFor={field.name}
+          >
+            {field.label}
+          </label>
+          
           {formErrors[field.name] && (
             <p className={styles.errorMsg}>{formErrors[field.name]}</p>
           )}
         </div>
       ))}
-    </>
+    </div>
   );
 };
 
