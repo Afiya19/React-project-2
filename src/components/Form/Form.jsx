@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styles from "./Form.module.css";
+import { Button } from "../Button/Button";
 
 const Form = () => {
   const [formData, setFormData] = useState({});
@@ -21,6 +22,12 @@ const Form = () => {
       errorMsg: "Enter a valid email address",
     },
   };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Add form submission logic (e.g., sending data to API)
+    console.log("Form data submitted:", formData);
+  }
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -96,6 +103,9 @@ const Form = () => {
           )}
         </div>
       ))}
+      <div className={styles.submit_btn}>
+      <Button text="Submit" onClick={handleSubmit}/>
+      </div>
     </div>
   );
 };

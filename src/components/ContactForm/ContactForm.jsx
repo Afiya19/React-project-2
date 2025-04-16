@@ -9,21 +9,24 @@ import Form from '../Form/Form';
 export const ContactForm = () => {
   return (
     <section className={styles.container}>
-        <div className={styles.contact_Form}>
-          <div className={styles.top_btn}>
-
-        <Button text="VIA SUPPORT CHAT" icon={<MdOutlineMessage  fontSize="24px"/>}/>
-        <Button text="VIA CALL" icon={<IoIosCall  fontSize="24px"/>}/>
-          </div>
-          <Button isOutline={true} text="VIA EMAIL FORM" icon={<CiMail  fontSize="24px"/>}/>
-          <Form/>
-
-          
+      <div className={styles.contact_Form}>
+        <div className={styles.top_btn}>
+          <Button
+            text="VIA SUPPORT CHAT"
+            icon={<MdOutlineMessage fontSize="24px" />}
+          />
+          <Button text="VIA CALL" icon={<IoIosCall fontSize="24px" />} />
         </div>
-        <div className={styles.contact_Image}></div>
-       
-
-
+        <Button
+          isOutline={true}
+          text="VIA EMAIL FORM"
+          icon={<CiMail fontSize="24px" />}
+        />
+        <Form />
+      </div>
+      <div className={styles.contact_Image}>
+        <img src="./images/service-lady.svg" alt="service lady"/>
+      </div>
     </section>
-  )
+  );
 }
